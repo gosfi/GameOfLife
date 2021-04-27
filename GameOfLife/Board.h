@@ -2,6 +2,7 @@
 #include <time.h>
 #include <vector>
 #include <string>
+#include <fstream>
 using std::vector;
 #pragma once
 

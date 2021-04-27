@@ -138,7 +138,30 @@ int Board::nextCellValue(coord coord, vector<vector<int>> state)
 
 vector<vector<int>> Board::loadBoardState(std::string path)
 {
-	
+	vector<vector<int>> state;
+	std::fstream stream;
+	stream.open(path);
+	if (!stream)
+	{
+		std::cout << "couldn't read the file!";
+		stream.close();
+	}
+	else
+	{
+		std::cout << "file read successfully!";
+		char x;
+		while(1)
+		{
+			stream >> x;
+			if (stream.eof())
+			{
+				break;
+			}
+			std::cout << x;
+		}
+		stream.close();
+	}
+	return state;
 }
 
 Board::~Board()
