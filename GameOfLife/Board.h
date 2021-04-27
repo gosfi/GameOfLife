@@ -26,7 +26,6 @@ public:
 	void render(vector<vector<int>> vect);
 	vector<vector<int>> nextState(vector<vector<int>> vec);
 	int nextCellValue(coord coord, vector<vector<int>> state);
-	vector<vector<int>> loadBoardState(std::string path);
 	~Board();
 };
 

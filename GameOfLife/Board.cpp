@@ -48,9 +48,9 @@ int Board::getWidth(vector<vector<int>> vec)
 void Board::render(std::vector<std::vector<int>> vect)
 {
 
-	for (int i = 0; i < vect.size(); i++)
+	for (unsigned int i = 0; i < vect.size(); i++)
 	{
-		for (int j = 0; j < vect[i].size(); j++)
+		for (unsigned int j = 0; j < vect[i].size(); j++)
 		{
 			if (vect[i][j] == this->DEAD)
 			{
@@ -134,34 +134,10 @@ int Board::nextCellValue(coord coord, vector<vector<int>> state)
 			return this->DEAD;
 		}
 	}
-}
-
-vector<vector<int>> Board::loadBoardState(std::string path)
-{
-	vector<vector<int>> state;
-	std::fstream stream;
-	stream.open(path);
-	if (!stream)
-	{
-		std::cout << "couldn't read the file!";
-		stream.close();
-	}
 	else
 	{
-		std::cout << "file read successfully!";
-		char x;
-		while(1)
-		{
-			stream >> x;
-			if (stream.eof())
-			{
-				break;
-			}
-			std::cout << x;
-		}
-		stream.close();
+		return this->DEAD;
 	}
-	return state;
 }
 
 Board::~Board()
